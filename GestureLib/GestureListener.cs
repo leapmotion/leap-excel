@@ -9,9 +9,16 @@ namespace GestureLib
 {
     public class GestureListener : Listener
     {
-        public delegate void GestureEvent(Gesture gesture);
+        private Frame lastFrame = null;
 
+        public delegate void GestureEvent(Gesture gesture);
         public event GestureEvent onGesture;
+
+        public delegate void GrabEvent(float strength);
+        public event GrabEvent onGrab;
+
+        public delegate void PalmVelocEvent(Vector vector);
+        public event PalmVelocEvent onPalmVelocity;
 
         public float sensitivity { get; set; }
 
@@ -38,6 +45,14 @@ namespace GestureLib
             Frame frame = controller.Frame();
             // Get the first hand
             Hand hand = frame.Hands[0];
+
+            onGrab(hand.GrabStrength);
+
+            if (lastFrame != null)
+            {
+                //onPalmVelocity(hand.PalmVelocity);
+                onPalmVelocity(hand.PalmPosition);
+            }
 
             // Check if the hand has any fingers
             FingerList fingers = hand.Fingers;
@@ -88,9 +103,10 @@ namespace GestureLib
                     Gesture gesture = new Gesture(directions.ToArray(), fingers.Count);
                     onGesture(gesture);
                 }
+                lastFrame = frame;
 
-                //Console.WriteLine("Hand has " + fingers.Count
-                //            + " fingers, average finger tip Velocity: " + avgVelocity);
+                Console.WriteLine("Hand has " + fingers.Count
+                            + " fingers, average finger tip Velocity: " + avgVelocity);
             }
         }
         public override void OnInit(Controller controller)

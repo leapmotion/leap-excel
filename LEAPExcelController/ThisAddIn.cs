@@ -16,7 +16,9 @@ namespace LEAPExcelController
         private Controller controller;
         private GestureListener listener;
         private DateTime LastGesture;
-
+        private Boolean bIsGrab = false;
+        private Excel.Worksheet sheet;
+        private Excel.Shape shape;
         //TODO: indikator for on/off evt title af window (latch til eventet når title ændrer sig)
 
 
@@ -24,6 +26,16 @@ namespace LEAPExcelController
         {
             listener = new GestureListener(1500);
             listener.onGesture += listener_onGesture;
+            listener.onGrab += listener_onGrab;
+            listener.onPalmVelocity += listener_onPalmVelocity;
+            
+            Console.WriteLine("Startup");
+
+            var excelWorksheet = (Excel.Worksheet)Application.ActiveSheet;
+            sheet = Application.ActiveSheet;
+            int i = sheet.Shapes.Count;
+            if (i > 0)
+                shape = sheet.Shapes.Item(1);
 
             //if(Properties.Settings.Default.LeapEnabled)
                StartLeap();
@@ -43,6 +55,7 @@ namespace LEAPExcelController
                 Application.Caption + " - LEAP Activated ";
             LastGesture = DateTime.Now.AddSeconds(-1);
             controller = new Controller(listener);
+
         }
 
         public void StopLeap()
@@ -50,6 +63,57 @@ namespace LEAPExcelController
            // Application.Caption = Application.Caption.Replace(" - LEAP Activated ", "");
             controller.RemoveListener(listener);
             controller.Dispose();
+        }
+
+        void listener_onPalmVelocity(Vector vector)
+        {
+            if (bIsGrab)
+            {
+                if (sheet != null)
+                {
+                    sheet.Cells[1, 1] = vector.x;
+                    sheet.Cells[1, 2] = bIsGrab ? 1 : 0;
+                    if (shape != null && vector.x != 0)
+                    {
+                        if (shape.HasChart == Office.MsoTriState.msoTrue && shape.Chart.ChartArea.Format.ThreeD != null)
+                        {
+                            //float z = shape.Chart.ChartArea.Format.ThreeD.RotationX;
+                            Application.ActiveSheet.Shapes.Item(1).Chart.ChartArea.Format.ThreeD.RotationX = 180 - vector.x / 2;
+                        }
+                    }
+                }
+            }
+        }
+
+        void listener_onGrab(float strength)
+        {
+            if (strength > 0.7)
+            {
+                bIsGrab = true;
+                /*
+                var excelWorksheet = (Excel.Worksheet)Application.ActiveSheet;
+                Excel.Worksheet sheet = Application.ActiveSheet;
+                if (sheet != null)
+                {
+                    int i = sheet.Shapes.Count;
+                    if (i > 0)
+                    {
+                        Excel.Shape s = sheet.Shapes.Item(1);
+                        if (s.HasChart == Office.MsoTriState.msoTrue && s.Chart.ChartArea.Format.ThreeD != null)
+                        {
+                            float z = s.Chart.ChartArea.Format.ThreeD.RotationX;
+                            Application.ActiveSheet.Shapes.Item(1).Chart.ChartArea.Format.ThreeD.RotationX = z + 10;
+                            Application.ActiveSheet.Shapes.Item(1).Chart.ChartArea.Format.ThreeD.RotationX = z - 10;
+                            Application.ActiveSheet.Shapes.Item(1).Chart.ChartArea.Format.ThreeD.RotationX = z;
+                        }
+                    }
+                }*/
+            }
+            else
+            {
+                bIsGrab = false;
+            }
+            sheet.Cells[1, 2] = strength;
         }
 
         void listener_onGesture(GestureLib.Gesture gesture)
