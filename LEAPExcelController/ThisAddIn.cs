@@ -71,8 +71,8 @@ namespace LEAPExcelController
             {
                 if (sheet != null)
                 {
-                    sheet.Cells[1, 1] = vector.x;
-                    sheet.Cells[1, 2] = bIsGrab ? 1 : 0;
+                    //sheet.Cells[1, 1] = vector.x;
+                    //sheet.Cells[1, 2] = bIsGrab ? 1 : 0;
                     if (shape != null && vector.x != 0)
                     {
                         if (shape.HasChart == Office.MsoTriState.msoTrue && shape.Chart.ChartArea.Format.ThreeD != null)
@@ -113,7 +113,7 @@ namespace LEAPExcelController
             {
                 bIsGrab = false;
             }
-            sheet.Cells[1, 2] = strength;
+            //sheet.Cells[1, 2] = strength;
         }
 
         void listener_onGesture(GestureLib.Gesture gesture)
