@@ -1,0 +1,11 @@
+*.suo
+*.vssscc
+*.vspscc
+bin
+Release
+Debug
+obj
+x64
+*.obj
+*.log
+*.vsto

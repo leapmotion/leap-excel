@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEAPVisioController", "LEAPVisioController\LEAPVisioController.csproj", "{D57C83DB-8AFA-457C-9073-49812516989D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEAPPowerPointController", "LEAPPowerPointController\LEAPPowerPointController.csproj", "{CCA24C3B-CEB5-4ACD-AE5E-87FF8565E98B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestureLib.NET4.0", "GestureLib\GestureLib.NET4.0.csproj", "{41C809F9-6788-4ED4-B072-E70E971229D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEAPExcelController", "LEAPExcelController\LEAPExcelController.csproj", "{352A6814-3764-4F5B-975F-8F8A93ED48FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LEAPWordController", "LEAPWordController\LEAPWordController.csproj", "{6C2B2253-1D9B-4A90-BF8A-C77DED645D17}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs13
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GestureLib\\GestureLib.NET4.0.csproj
+		SccProjectName1 = GestureLib
+		SccLocalPath1 = GestureLib
+		SccProjectUniqueName2 = LEAPExcelController\\LEAPExcelController.csproj
+		SccProjectName2 = LEAPExcelController
+		SccLocalPath2 = LEAPExcelController
+		SccProjectUniqueName3 = LEAPPowerPointController\\LEAPPowerPointController.csproj
+		SccProjectName3 = LEAPPowerPointController
+		SccLocalPath3 = LEAPPowerPointController
+		SccProjectUniqueName4 = LEAPVisioController\\LEAPVisioController.csproj
+		SccProjectName4 = LEAPVisioController
+		SccLocalPath4 = LEAPVisioController
+		SccProjectUniqueName5 = LEAPWordController\\LEAPWordController.csproj
+		SccProjectName5 = LEAPWordController
+		SccLocalPath5 = LEAPWordController
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D57C83DB-8AFA-457C-9073-49812516989D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D57C83DB-8AFA-457C-9073-49812516989D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D57C83DB-8AFA-457C-9073-49812516989D}.Debug|x64.ActiveCfg = Debug|x64
+		{D57C83DB-8AFA-457C-9073-49812516989D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D57C83DB-8AFA-457C-9073-49812516989D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D57C83DB-8AFA-457C-9073-49812516989D}.Release|x64.ActiveCfg = Release|x64
+		{CCA24C3B-CEB5-4ACD-AE5E-87FF8565E98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA24C3B-CEB5-4ACD-AE5E-87FF8565E98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA24C3B-CEB5-4ACD-AE5E-87FF8565E98B}.Debug|x64.ActiveCfg = Debug|x64
+		{CCA24C3B-CEB5-4ACD-AE5E-87FF8565E98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA24C3B-CEB5-4ACD-AE5E-87FF8565E98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA24C3B-CEB5-4ACD-AE5E-87FF8565E98B}.Release|x64.ActiveCfg = Release|x64
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Debug|x64.ActiveCfg = Debug|x64
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Debug|x64.Build.0 = Debug|x64
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Release|x64.ActiveCfg = Release|x64
+		{41C809F9-6788-4ED4-B072-E70E971229D1}.Release|x64.Build.0 = Release|x64
+		{352A6814-3764-4F5B-975F-8F8A93ED48FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{352A6814-3764-4F5B-975F-8F8A93ED48FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{352A6814-3764-4F5B-975F-8F8A93ED48FF}.Debug|x64.ActiveCfg = Debug|x64
+		{352A6814-3764-4F5B-975F-8F8A93ED48FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{352A6814-3764-4F5B-975F-8F8A93ED48FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{352A6814-3764-4F5B-975F-8F8A93ED48FF}.Release|x64.ActiveCfg = Release|x64
+		{6C2B2253-1D9B-4A90-BF8A-C77DED645D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2B2253-1D9B-4A90-BF8A-C77DED645D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2B2253-1D9B-4A90-BF8A-C77DED645D17}.Debug|x64.ActiveCfg = Debug|x64
+		{6C2B2253-1D9B-4A90-BF8A-C77DED645D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2B2253-1D9B-4A90-BF8A-C77DED645D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2B2253-1D9B-4A90-BF8A-C77DED645D17}.Release|x64.ActiveCfg = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
