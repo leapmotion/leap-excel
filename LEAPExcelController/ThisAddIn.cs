@@ -79,6 +79,8 @@ namespace LEAPExcelController
                         {
                             //float z = shape.Chart.ChartArea.Format.ThreeD.RotationX;
                             Application.ActiveSheet.Shapes.Item(1).Chart.ChartArea.Format.ThreeD.RotationX = 180 - vector.x / 2;
+                            Application.ActiveSheet.Shapes.Item(1).Chart.ChartArea.Format.ThreeD.RotationX = -180 +`vector.y;
+                            
                         }
                     }
                 }
